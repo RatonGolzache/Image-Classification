@@ -3,20 +3,20 @@ Python version: 3.12.12
 To create a virtual environment using python:
 
 ```bash
-**macOS/Linux:**
+# macOS/Linux:
 python3.12 -m venv ml-exercise-group19
 
-**Windows:**
+# Windows:
 py -3.12 -m venv ml-exercise-group19
 ```
 
 To activate the environment:
 
 ```bash
-**macOS/Linux:**
+# macOS/Linux:
 source ml-exercise-group19/bin/activate
 
-**Windows (Command prompt):**
+# Windows (Command prompt):
 ml-exercise-group19\Scripts\activate
 ```
 
