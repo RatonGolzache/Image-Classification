@@ -1,0 +1,15 @@
+dataset:
+  name: "example"              
+  root: "../data" 
+  
+traditional:
+  svm_c: 1.0
+  rf_n_estimators: 100
+
+deep:
+  cnn_scratch:
+    lr: 0.001
+    epochs: 50
+  cnn_transfer:
+    pretrained: true
+    freeze_backbone: true
