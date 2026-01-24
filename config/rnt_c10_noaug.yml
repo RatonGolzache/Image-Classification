@@ -11,7 +11,7 @@ model:
   dropout: 0.5
 
 training:
-  epochs: 50  
+  epochs: 50 
   learning_rate: 0.001  
   weight_decay: 0.0001
   checkpoint_dir: "../../checkpoints"
