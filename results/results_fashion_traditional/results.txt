@@ -1,0 +1,225 @@
+===== BEST CONFIGURATION SUMMARY =====
+
+Pipeline: Histogram
+  Best SVM: SVC_kernel=linear_C=10_gamma=NA | accuracy=0.3276
+  Best k-NN: kNN_k=11_weights=uniform | accuracy=0.3472
+
+Pipeline: SIFT+BoVW
+  Best SVM: SVC_kernel=linear_C=10_gamma=NA | accuracy=0.5654
+  Best k-NN: kNN_k=11_weights=uniform | accuracy=0.4938
+
+===== FULL RESULTS BELOW =====
+
+=== Histogram ===
+
+  feature_time: 0.9512138366699219
+
+  svm_grid:
+    SVC_kernel=linear_C=0.1_gamma=NA:
+      accuracy: 0.3101
+      balanced_accuracy: 0.3101
+      train_time: 346.4011
+      test_time: 34.9614
+      per_class_accuracy:
+        T-shirt/top: 0.0630
+        Trouser: 0.6080
+        Pullover: 0.0440
+        Dress: 0.0310
+        Coat: 0.4580
+        Sandal: 0.7290
+        Shirt: 0.3490
+        Sneaker: 0.2220
+        Bag: 0.0930
+        Ankle boot: 0.5040
+    SVC_kernel=linear_C=1_gamma=NA:
+      accuracy: 0.3244
+      balanced_accuracy: 0.3244
+      train_time: 401.5098
+      test_time: 25.8591
+      per_class_accuracy:
+        T-shirt/top: 0.0920
+        Trouser: 0.6200
+        Pullover: 0.0850
+        Dress: 0.0740
+        Coat: 0.3860
+        Sandal: 0.6680
+        Shirt: 0.3280
+        Sneaker: 0.3270
+        Bag: 0.1190
+        Ankle boot: 0.5450
+    SVC_kernel=linear_C=10_gamma=NA:
+      accuracy: 0.3276
+      balanced_accuracy: 0.3276
+      train_time: 375.6297
+      test_time: 34.1631
+      per_class_accuracy:
+        T-shirt/top: 0.0910
+        Trouser: 0.5900
+        Pullover: 0.0900
+        Dress: 0.1080
+        Coat: 0.3550
+        Sandal: 0.6110
+        Shirt: 0.3240
+        Sneaker: 0.4170
+        Bag: 0.1230
+        Ankle boot: 0.5670
+
+  knn_grid:
+    kNN_k=3_weights=uniform:
+      accuracy: 0.3000
+      balanced_accuracy: 0.3000
+      train_time: 0.0119
+      test_time: 1.5376
+      per_class_accuracy:
+        T-shirt/top: 0.4230
+        Trouser: 0.5540
+        Pullover: 0.3430
+        Dress: 0.2670
+        Coat: 0.1930
+        Sandal: 0.4210
+        Shirt: 0.1420
+        Sneaker: 0.3440
+        Bag: 0.0960
+        Ankle boot: 0.2170
+    kNN_k=5_weights=uniform:
+      accuracy: 0.3197
+      balanced_accuracy: 0.3197
+      train_time: 0.0151
+      test_time: 1.4515
+      per_class_accuracy:
+        T-shirt/top: 0.3570
+        Trouser: 0.5440
+        Pullover: 0.3480
+        Dress: 0.2710
+        Coat: 0.2430
+        Sandal: 0.4770
+        Shirt: 0.1730
+        Sneaker: 0.3620
+        Bag: 0.1420
+        Ankle boot: 0.2800
+    kNN_k=11_weights=uniform:
+      accuracy: 0.3472
+      balanced_accuracy: 0.3472
+      train_time: 0.0070
+      test_time: 1.4898
+      per_class_accuracy:
+        T-shirt/top: 0.3450
+        Trouser: 0.5720
+        Pullover: 0.3600
+        Dress: 0.3140
+        Coat: 0.2630
+        Sandal: 0.5110
+        Shirt: 0.2030
+        Sneaker: 0.3850
+        Bag: 0.1510
+        Ankle boot: 0.3680
+
+=== SIFT+BoVW ===
+
+  vocab_size: 100
+
+  feature_time_train: 124.26917505264282
+
+  feature_time_test: 13.252980470657349
+
+  feature_time_total: 137.52215552330017
+
+  svm_grid:
+    SVC_kernel=linear_C=0.1_gamma=NA:
+      accuracy: 0.5609
+      balanced_accuracy: 0.5609
+      train_time: 356.4503
+      test_time: 31.9264
+      per_class_accuracy:
+        T-shirt/top: 0.5730
+        Trouser: 0.7840
+        Pullover: 0.4080
+        Dress: 0.4530
+        Coat: 0.4530
+        Sandal: 0.6640
+        Shirt: 0.2110
+        Sneaker: 0.6960
+        Bag: 0.6050
+        Ankle boot: 0.7620
+    SVC_kernel=linear_C=1_gamma=NA:
+      accuracy: 0.5632
+      balanced_accuracy: 0.5632
+      train_time: 308.9659
+      test_time: 29.8266
+      per_class_accuracy:
+        T-shirt/top: 0.5700
+        Trouser: 0.7870
+        Pullover: 0.4160
+        Dress: 0.4350
+        Coat: 0.4440
+        Sandal: 0.6790
+        Shirt: 0.2200
+        Sneaker: 0.7000
+        Bag: 0.6120
+        Ankle boot: 0.7690
+    SVC_kernel=linear_C=10_gamma=NA:
+      accuracy: 0.5654
+      balanced_accuracy: 0.5654
+      train_time: 419.5563
+      test_time: 23.2431
+      per_class_accuracy:
+        T-shirt/top: 0.5700
+        Trouser: 0.7930
+        Pullover: 0.4210
+        Dress: 0.4340
+        Coat: 0.4480
+        Sandal: 0.6830
+        Shirt: 0.2180
+        Sneaker: 0.7000
+        Bag: 0.6150
+        Ankle boot: 0.7720
+
+  knn_grid:
+    kNN_k=3_weights=uniform:
+      accuracy: 0.4596
+      balanced_accuracy: 0.4596
+      train_time: 0.0186
+      test_time: 1.4225
+      per_class_accuracy:
+        T-shirt/top: 0.6520
+        Trouser: 0.4950
+        Pullover: 0.4320
+        Dress: 0.3060
+        Coat: 0.2830
+        Sandal: 0.4900
+        Shirt: 0.1600
+        Sneaker: 0.6320
+        Bag: 0.4300
+        Ankle boot: 0.7160
+    kNN_k=5_weights=uniform:
+      accuracy: 0.4795
+      balanced_accuracy: 0.4795
+      train_time: 0.0000
+      test_time: 1.4879
+      per_class_accuracy:
+        T-shirt/top: 0.6070
+        Trouser: 0.4950
+        Pullover: 0.4200
+        Dress: 0.3430
+        Coat: 0.3770
+        Sandal: 0.5490
+        Shirt: 0.1460
+        Sneaker: 0.6820
+        Bag: 0.4710
+        Ankle boot: 0.7050
+    kNN_k=11_weights=uniform:
+      accuracy: 0.4938
+      balanced_accuracy: 0.4938
+      train_time: 0.0061
+      test_time: 1.5983
+      per_class_accuracy:
+        T-shirt/top: 0.6240
+        Trouser: 0.5070
+        Pullover: 0.4150
+        Dress: 0.3390
+        Coat: 0.3750
+        Sandal: 0.5640
+        Shirt: 0.1530
+        Sneaker: 0.7020
+        Bag: 0.5190
+        Ankle boot: 0.7400
