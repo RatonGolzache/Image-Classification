@@ -47,6 +47,7 @@ deactivate
 Otherwise, use preferred environment / venv manager and install "requirements.txt".
 
 (1) Traditional Methods
+
 First navigate to the root folder of the project. The file "run_traditional.py" executes all the python scripts and utilizes all feature selection, traditional models and dataset options. The presets are determined in config_traditional.yaml.
 
 ```bash
