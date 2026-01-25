@@ -1,0 +1,225 @@
+===== BEST CONFIGURATION SUMMARY =====
+
+Pipeline: Histogram
+  Best SVM: SVC_kernel=linear_C=10_gamma=NA | accuracy=0.3260
+  Best k-NN: kNN_k=11_weights=uniform | accuracy=0.3137
+
+Pipeline: SIFT+BoVW
+  Best SVM: SVC_kernel=linear_C=10_gamma=NA | accuracy=0.2790
+  Best k-NN: kNN_k=11_weights=uniform | accuracy=0.2007
+
+===== FULL RESULTS BELOW =====
+
+=== Histogram ===
+
+  feature_time: 0.801508903503418
+
+  svm_grid:
+    SVC_kernel=linear_C=0.1_gamma=NA:
+      accuracy: 0.3111
+      balanced_accuracy: 0.3111
+      train_time: 266.9770
+      test_time: 28.4303
+      per_class_accuracy:
+        airplane: 0.4790
+        automobile: 0.3680
+        bird: 0.0870
+        cat: 0.2250
+        deer: 0.3420
+        dog: 0.1390
+        frog: 0.3550
+        horse: 0.2320
+        ship: 0.4520
+        truck: 0.4320
+    SVC_kernel=linear_C=1_gamma=NA:
+      accuracy: 0.3220
+      balanced_accuracy: 0.3220
+      train_time: 254.3354
+      test_time: 25.7859
+      per_class_accuracy:
+        airplane: 0.4920
+        automobile: 0.3230
+        bird: 0.1290
+        cat: 0.2660
+        deer: 0.3230
+        dog: 0.1480
+        frog: 0.3640
+        horse: 0.2510
+        ship: 0.4430
+        truck: 0.4810
+    SVC_kernel=linear_C=10_gamma=NA:
+      accuracy: 0.3260
+      balanced_accuracy: 0.3260
+      train_time: 255.9959
+      test_time: 21.2198
+      per_class_accuracy:
+        airplane: 0.4890
+        automobile: 0.3200
+        bird: 0.1480
+        cat: 0.2720
+        deer: 0.3190
+        dog: 0.1550
+        frog: 0.3700
+        horse: 0.2620
+        ship: 0.4420
+        truck: 0.4830
+
+  knn_grid:
+    kNN_k=3_weights=uniform:
+      accuracy: 0.2753
+      balanced_accuracy: 0.2753
+      train_time: 0.0125
+      test_time: 4.7001
+      per_class_accuracy:
+        airplane: 0.5230
+        automobile: 0.4310
+        bird: 0.3230
+        cat: 0.2480
+        deer: 0.2320
+        dog: 0.1630
+        frog: 0.2260
+        horse: 0.1590
+        ship: 0.2450
+        truck: 0.2030
+    kNN_k=5_weights=uniform:
+      accuracy: 0.2943
+      balanced_accuracy: 0.2943
+      train_time: 0.0132
+      test_time: 1.8835
+      per_class_accuracy:
+        airplane: 0.5080
+        automobile: 0.4180
+        bird: 0.2940
+        cat: 0.2270
+        deer: 0.2660
+        dog: 0.1970
+        frog: 0.2880
+        horse: 0.1920
+        ship: 0.3080
+        truck: 0.2450
+    kNN_k=11_weights=uniform:
+      accuracy: 0.3137
+      balanced_accuracy: 0.3137
+      train_time: 0.0041
+      test_time: 1.6296
+      per_class_accuracy:
+        airplane: 0.4800
+        automobile: 0.4060
+        bird: 0.2980
+        cat: 0.2580
+        deer: 0.2680
+        dog: 0.1840
+        frog: 0.3660
+        horse: 0.2150
+        ship: 0.3670
+        truck: 0.2950
+
+=== SIFT+BoVW ===
+
+  vocab_size: 100
+
+  feature_time_train: 138.05769538879395
+
+  feature_time_test: 11.467834949493408
+
+  feature_time_total: 149.52553033828735
+
+  svm_grid:
+    SVC_kernel=linear_C=0.1_gamma=NA:
+      accuracy: 0.2746
+      balanced_accuracy: 0.2746
+      train_time: 462.4466
+      test_time: 48.2269
+      per_class_accuracy:
+        airplane: 0.3890
+        automobile: 0.3140
+        bird: 0.1430
+        cat: 0.1240
+        deer: 0.1380
+        dog: 0.3520
+        frog: 0.2270
+        horse: 0.2890
+        ship: 0.4050
+        truck: 0.3650
+    SVC_kernel=linear_C=1_gamma=NA:
+      accuracy: 0.2776
+      balanced_accuracy: 0.2776
+      train_time: 473.8833
+      test_time: 32.6163
+      per_class_accuracy:
+        airplane: 0.3900
+        automobile: 0.3290
+        bird: 0.1560
+        cat: 0.1190
+        deer: 0.1550
+        dog: 0.3340
+        frog: 0.2160
+        horse: 0.3080
+        ship: 0.4030
+        truck: 0.3660
+    SVC_kernel=linear_C=10_gamma=NA:
+      accuracy: 0.2790
+      balanced_accuracy: 0.2790
+      train_time: 581.0216
+      test_time: 29.2407
+      per_class_accuracy:
+        airplane: 0.3860
+        automobile: 0.3300
+        bird: 0.1600
+        cat: 0.1240
+        deer: 0.1560
+        dog: 0.3320
+        frog: 0.2140
+        horse: 0.3120
+        ship: 0.4060
+        truck: 0.3700
+
+  knn_grid:
+    kNN_k=3_weights=uniform:
+      accuracy: 0.1716
+      balanced_accuracy: 0.1716
+      train_time: 0.0096
+      test_time: 1.2318
+      per_class_accuracy:
+        airplane: 0.5230
+        automobile: 0.2350
+        bird: 0.1940
+        cat: 0.1400
+        deer: 0.1130
+        dog: 0.1400
+        frog: 0.0810
+        horse: 0.0620
+        ship: 0.1730
+        truck: 0.0550
+    kNN_k=5_weights=uniform:
+      accuracy: 0.1850
+      balanced_accuracy: 0.1850
+      train_time: 0.0044
+      test_time: 1.1671
+      per_class_accuracy:
+        airplane: 0.5070
+        automobile: 0.2320
+        bird: 0.1710
+        cat: 0.1290
+        deer: 0.1040
+        dog: 0.1470
+        frog: 0.1220
+        horse: 0.1020
+        ship: 0.2480
+        truck: 0.0880
+    kNN_k=11_weights=uniform:
+      accuracy: 0.2007
+      balanced_accuracy: 0.2007
+      train_time: 0.0071
+      test_time: 1.1922
+      per_class_accuracy:
+        airplane: 0.5140
+        automobile: 0.2190
+        bird: 0.1760
+        cat: 0.1380
+        deer: 0.1050
+        dog: 0.1960
+        frog: 0.1250
+        horse: 0.1130
+        ship: 0.3120
+        truck: 0.1090
