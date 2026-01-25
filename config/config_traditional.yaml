@@ -1,0 +1,28 @@
+global:
+  random_state: 19
+
+  use_fraction: 1
+
+  vocab_size: 100
+
+datasets:
+  cifar10:
+    enabled: true
+    data_dir: "data/cifar-10-batches-py"
+    output_dir: "results/results_cifar_traditional"
+
+  fashion_mnist:
+    enabled: true
+    data_dir: "data"
+    output_dir: "results/results_fashion_traditional"
+
+
+grids:
+  svm:
+    C_grid: [0.1, 1, 10]
+    kernel_grid: ["linear"]  
+    gamma_grid: ["scale"]     
+
+  knn:
+    k_grid: [3, 5, 11]
+    weights_grid: ["uniform"] 

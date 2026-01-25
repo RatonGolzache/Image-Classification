@@ -1,0 +1,32 @@
+Model Evaluation Results
+Dataset: CIFAR10
+Balanced Accuracy: 0.8596
+============================================================
+
+Per-class Accuracy:
+  airplane    : 0.8540
+  automobile  : 0.9170
+  bird        : 0.8310
+  cat         : 0.7500
+  deer        : 0.8680
+  dog         : 0.7060
+  frog        : 0.9240
+  horse       : 0.8890
+  ship        : 0.9330
+  truck       : 0.9240
+
+Confusion Matrix (rows=true labels, columns=predicted labels):
+                   airplane  automobile        bird         cat        deer         dog        frog       horse        ship       truck
+---------------------------------------------------------------------------------------------------------------------------------------
+airplane    :          854           7          22          22          11           0           7           7          50          20
+automobile  :            3         917           5           6           1           1           4           2           5          56
+bird        :           35           1         831          34          28          19          47           3           2           0
+cat         :            9           3          58         750          38          51          68          11          10           2
+deer        :            6           1          48          23         868           9          27          16           2           0
+dog         :            5           2          43         159          33         706          23          24           2           3
+frog        :            2           2          22          28           8           9         924           3           1           1
+horse       :            5           1          15          24          37          18           6         889           3           2
+ship        :           18          10           4          19           1           0           2           0         933          13
+truck       :            9          31           6           6           3           0           5           5          11         924
+---------------------------------------------------------------------------------------------------------------------------------------
+Total       :        45212 predictions

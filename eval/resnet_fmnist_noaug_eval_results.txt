@@ -1,0 +1,32 @@
+Model Evaluation Results
+Dataset: FASHIONMNIST
+Balanced Accuracy: 0.9268
+============================================================
+
+Per-class Accuracy:
+  T-shirt/top : 0.8380
+  Trouser     : 0.9860
+  Pullover    : 0.9040
+  Dress       : 0.9220
+  Coat        : 0.9210
+  Sandal      : 0.9920
+  Shirt       : 0.7790
+  Sneaker     : 0.9810
+  Bag         : 0.9910
+  Ankle boot  : 0.9540
+
+Confusion Matrix (rows=true labels, columns=predicted labels):
+                T-shirt/top     Trouser    Pullover       Dress        Coat      Sandal       Shirt     Sneaker         Bag  Ankle boot
+---------------------------------------------------------------------------------------------------------------------------------------
+T-shirt/top :          838           1          30          22           5           2          94           1           7           0
+Trouser     :            0         986           2           7           2           0           0           0           3           0
+Pullover    :           13           2         904           6          33           0          42           0           0           0
+Dress       :            3           2          12         922          42           0          18           0           1           0
+Coat        :            0           1          26           8         921           0          44           0           0           0
+Sandal      :            1           0           0           0           0         992           0           6           0           1
+Shirt       :           78           1          48          26          63           0         779           0           5           0
+Sneaker     :            0           0           0           0           0          11           0         981           0           8
+Bag         :            1           2           1           2           0           1           2           0         991           0
+Ankle boot  :            0           0           0           0           0          12           0          34           0         954
+---------------------------------------------------------------------------------------------------------------------------------------
+Total       :        45125 predictions

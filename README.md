@@ -46,6 +46,8 @@ deactivate
 
 Otherwise, use preferred environment / venv manager and install "requirements.txt".
 
+The CIFAR-10 dataset needs to be downloaded (https://www.cs.toronto.edu/~kriz/cifar.html; CIFAR-10 python version) so that the "cifar-10-batches-py" folder is right inside the "data" folder. The FashionMNIST dataset is loaded from torch. 
+
 (1) Traditional Methods
 
 First navigate to the root folder of the project. The file "run_traditional.py" executes all the python scripts and utilizes all feature selection, traditional models and dataset options. The presets are determined in config_traditional.yaml.
@@ -53,6 +55,8 @@ First navigate to the root folder of the project. The file "run_traditional.py" 
 ```bash
 python -m src.traditional.run_traditional --config config/config_traditional.yaml
 ```
+
+All the results will be saved in the root "results" folder.
 
 (2) Deep Learning
 
@@ -75,14 +79,14 @@ Note that the ResNet transfer learning models are quite computationally expensiv
 To evaluate the checkpoints, navigate to src/utils. The "eval.py" script takes "--config" and "--checkpoint" as arguments. The checkpoint file has to match the config file with which the model was trained. You can evaluate the model presets with the following commands:
 
 ```bash
-python eval.py --config ../../config/sqn_c10_aug.yml --checkpoint ../../squeezenet_cifar10_aug
-python eval.py --config ../../config/sqn_c10_noaug.yml --checkpoint ../../squeezenet_cifar10_noaug
-python eval.py --config ../../config/sqn_fmnst_aug.yml --checkpoint ../../squeezenet_fmnist_aug
-python eval.py --config ../../config/sqn_fmnst_noaug.yml --checkpoint ../../squeezenet_fmnist_noaug
-python eval.py --config ../../config/rnt_c10_aug.yml --checkpoint ../../resnet_cifar10_aug
-python eval.py --config ../../config/rnt_c10_noaug.yml --checkpoint ../../resnet_cifar10_noaug
-python eval.py --config ../../config/rnt_fmnst_aug.yml --checkpoint ../../resnet_fmnist_aug
-python eval.py --config ../../config/rnt_fmnst_noaug.yml --checkpoint ../../resnet_fmnist_noaug
+python eval.py --config ../../config/sqn_c10_aug.yml --checkpoint ../../checkpoints/squeezenet_cifar10_aug.pt
+python eval.py --config ../../config/sqn_c10_noaug.yml --checkpoint ../../checkpoints/squeezenet_cifar10_noaug.pt
+python eval.py --config ../../config/sqn_fmnst_aug.yml --checkpoint ../../checkpoints/squeezenet_fmnist_aug.pt
+python eval.py --config ../../config/sqn_fmnst_noaug.yml --checkpoint ../../checkpoints/squeezenet_fmnist_noaug.pt
+python eval.py --config ../../config/rnt_c10_aug.yml --checkpoint ../../checkpoints/resnet_cifar10_aug.pt
+python eval.py --config ../../config/rnt_c10_noaug.yml --checkpoint ../../checkpoints/resnet_cifar10_noaug.pt
+python eval.py --config ../../config/rnt_fmnst_aug.yml --checkpoint ../../checkpoints/resnet_fmnist_aug.pt
+python eval.py --config ../../config/rnt_fmnst_noaug.yml --checkpoint ../../checkpoints/resnet_fmnist_noaug.pt
 ``` 
-The results will be saved in the root /evals folder.
+The results will be saved in the root /eval folder.
 

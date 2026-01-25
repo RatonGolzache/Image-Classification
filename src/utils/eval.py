@@ -6,7 +6,8 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import balanced_accuracy_score, confusion_matrix
 import sys
-import time  
+import time 
+
 
 # Fix import path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -15,10 +16,12 @@ from models.squeezenet import SqueezeNetCIFAR10, SqueezeNetFashionMNIST
 from models.resnet_transfer import ResNetTransfer
 
 
+
 def load_config(config_path: str):
     """Load YAML configuration."""
     with open(config_path, "r") as f:
         return yaml.safe_load(f)
+
 
 
 def get_device() -> torch.device:
@@ -26,6 +29,7 @@ def get_device() -> torch.device:
     if torch.cuda.is_available():
         return torch.device("cuda")
     return torch.device("cpu")
+
 
 
 def get_class_names(dataset_name: str) -> list:
@@ -42,6 +46,7 @@ def get_class_names(dataset_name: str) -> list:
         ]
     else:
         return [f"Class_{i}" for i in range(10)]  # fallback
+
 
 
 def create_model(model_cfg: dict, dataset_name: str, num_classes: int, device: torch.device):
@@ -68,6 +73,7 @@ def create_model(model_cfg: dict, dataset_name: str, num_classes: int, device: t
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Model created: {total_params:,} params ({total_params/1e6:.1f}M)")
     return model
+
 
 
 def evaluate(model: nn.Module, dataloader, device: torch.device):
@@ -120,6 +126,7 @@ def evaluate(model: nn.Module, dataloader, device: torch.device):
     return bal_acc, per_class_acc, cm, y_pred
 
 
+
 def save_results(results_path: Path, dataset_name: str, bal_acc: float, 
                 per_class_acc: list, cm: np.ndarray, class_names: list, y_pred: np.ndarray):
     """Save formatted evaluation results to text file."""
@@ -153,6 +160,7 @@ def save_results(results_path: Path, dataset_name: str, bal_acc: float,
         f.write(f"{'Total':<12}: {total_preds:>12} predictions\n")
 
 
+
 def main():
     parser = argparse.ArgumentParser(
         description="Evaluate SqueezeNet/ResNetTransfer on test set and save results"
@@ -170,6 +178,9 @@ def main():
         help="Path to model checkpoint (.pt) saved by training script",
     )
     args = parser.parse_args()
+
+    # Start test suite timer
+    suite_start = time.time()
 
     print("Loading evaluation config...")
     cfg = load_config(args.config)
@@ -217,14 +228,18 @@ def main():
     results_filename = f"{ckpt_name}_eval_results.txt"
     results_path = eval_dir / results_filename
 
-    # Save results
+    # Save results (no timer in file)
     save_results(results_path, dataset_name.upper(), bal_acc, per_class_acc, cm, class_names, y_pred)
     
-    # Console summary
+    # End test suite timer
+    suite_time = time.time() - suite_start
+    
+    # Console summary with timer
     print(f"\n{'='*60}")
     print(f"FINAL RESULTS")
     print(f"{'='*60}")
     print(f"Balanced Accuracy: {bal_acc:.4f}")
+    print(f"Total test suite time: {suite_time:.2f}s")
     print("\nPer-class accuracy:")
     for class_name, acc in zip(class_names, per_class_acc):
         print(f"  {class_name:<12}: {acc:.4f}")
